@@ -25,7 +25,7 @@ const levels=['Easy','Medium','Hard'];
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{area}</Text>
-      <View style={{flexDirection:'row', justifyContent:'space-evenly'}}>
+      <View style={{flexDirection:'column', justifyContent:'space-evenly'}}>
     {
       levels.map((item, index) =>(
       <View key={index}  style={{padding:10,  width:100}}><Button  title={item} onPress={() => handlePress(item)} /></View>))

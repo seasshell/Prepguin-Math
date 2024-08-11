@@ -3,8 +3,8 @@ import { ScrollView, View, TouchableOpacity, Text, StyleSheet } from 'react-nati
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
-import SelectLevel from './SelectLevel';
-import ProblemScreen from './ProblemScreen';
+import SelectLevel from '../SelectLevel';
+import ProblemScreen from '../ProblemScreen';
 
 const Stack = createStackNavigator();
 

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Text, StyleSheet, Button, ScrollView, ToastAndroid } from 'react-native';
-import problemsData from './MathAppProbs.json';
+import problemsData from './(tabs)/MathAppProbs.json';
 import { useRoute } from '@react-navigation/native';
 
 

@@ -10,7 +10,7 @@
         "Difficulty": "Easy",
         "Answer": "Other",
         "Explanation": "Note that 9997 = 10000 \u2212 3 and 7999 = 8000 \u2212 1, so the desired product is (10000 \u2212 3)(8000 \u2212 1) = 80000000 \u2212 10000 \u2212 24000 + 3 = 79966003, whose digits sum to 40",
-        "Category": "NumberSense",
+        "Category": "Number Sense",
         "Type": "Sprint"
     },
     {
@@ -66,7 +66,7 @@
         "Difficulty": "Easy",
         "Answer": "26",
         "Explanation": "Note that 1 + 11 + 21 + \u00b7 \u00b7 \u00b7 + (10x + 1) = 10 \u00b7 (0 + 1 + \u00b7 \u00b7 \u00b7 + x) + (x + 1) = 5x \u00b7 (x + 1) + (x + 1) = (5x+1)(x+1). Since 131 is prime, the smallest possible value of x is the smallest positive integer that satisfies 5x + 1 = 131, so x = 26.",
-        "Category": "NumberSense",
+        "Category": "Number Sense",
         "Type": "Sprint"
     },
     {
@@ -80,7 +80,7 @@
         "Difficulty": "Easy",
         "Answer": "189",
         "Explanation": "Note that if a = b, then a and b are inherently siblings, so there are 99 such pairs here. Otherwise, at least one of the numbers must have two digits. If exactly one of the numbers has two digits, then the only way a and b can be siblings is if the number with two digits is a multiple of 11 and the single-digit number is that number divided by 11. Accounting for order, this yields 2 \u00b7 9 = 18 pairs. Finally, if both of the numbers have two digits and are note equal, then a and b must be distinct permutations of each other. Because 0 cannot be a digit in either a or b in this case, there are 9 \u00b7 8 = 72 such pairs. The total number of sibling pairs with both numbers less than 100 is therefore 99 + 18 + 72 = 189",
-        "Category": "NumberSense",
+        "Category": "Number Sense",
         "Type": "Sprint"
     },
     {
@@ -94,7 +94,7 @@
         "Difficulty": "Easy",
         "Answer": "98",
         "Explanation": "Note that 2 \u00b7 (2^99 \u2212 99) = 2^100 \u2212 198, so the desired remainder is 2^100 \u2212 100 \u2212 (2^100 \u2212 198) = 98",
-        "Category": "NumberSense",
+        "Category": "Number Sense",
         "Type": "Sprint"
     },
     {
@@ -108,7 +108,7 @@
         "Difficulty": "Easy",
         "Answer": "8",
         "Explanation": "There will be 5 \u2212 1 = 4 leading zeros to the right of the decimal point in this decimal expansion, so it suffices to compute \u230a100000/12345\u230b, which is 8.",
-        "Category": "NumberSense",
+        "Category": "Number Sense",
         "Type": "Sprint"
     },
     {
@@ -150,7 +150,7 @@
         "Difficulty": "Medium",
         "Answer": "1302",
         "Explanation": "Each integer n can be expressed in the form 2^a \u00b7 b for integers a and b, with b odd. By definition, f(n) = b and g(n) = 2^a, so b = 2^a \u2212 1. Then n = 2^a(2^a \u2212 1) = 4^a \u2212 2^a, so the possible values of n are 4^1 \u2212 2^1, 4^2 \u2212 2^2, 4^3 \u2212 2^3, 4^4 \u2212 2^4, and 4^5 \u22122^5. These sum to (4^1 + 4^2 + 4^3 + 4^4 + 4^5) \u2212 (2^1 + 2^2 + 2^3 + 2^4 + 2^5) = 4(1\u22124^5)/(1\u22124) \u2212 62, or 1302.",
-        "Category": "NumberSense",
+        "Category": "Number Sense",
         "Type": "Sprint"
     },
     {
@@ -220,7 +220,7 @@
         "Difficulty": "Medium",
         "Answer": "3",
         "Explanation": "Since there is a multiple of 99 in every set of 100 consecutive integers, the largest possible such number must be between 98700 and 98799, inclusive. Note that 98700 \u2261 (987 \u00b7 1) mod 99, so 98700 \u2261 96 mod 99, and one possible value for N is 98700 + 3 = 98703. Note that no greater five-digit integer with distinct digits can be divisible by 99, so N = 98703, and it has units digit 3",
-        "Category": "NumberSense",
+        "Category": "Number Sense",
         "Type": "Sprint"
     },
     {
@@ -276,7 +276,7 @@
         "Difficulty": "Medium",
         "Answer": "0",
         "Explanation": "Note that for every positive integer n \u2265 4, n! is divisible by 4. Because the units digit of the powers of n cycle in groups of d, where d | 4, the units digit of 4^4!+5^5!+\u00b7 \u00b7 \u00b7+2023^2023! is the same as the units digit of 4^4+5^4+6^4+\u00b7 \u00b7 \u00b7+2023^4. The units digit of 1^4+2^4+\u00b7 \u00b7 \u00b7+9^4+10^4 is (1+6+1+6+5+6+1+6+1+0) \u2261 3 mod 10, so the units digit of 4^4 + 5^4 + 6^4 + \u00b7 \u00b7 \u00b7 + 2023^4 is the units digit of 202 \u00b7 3, or 6. Adding back the first three terms yields a final units digit of (1 + 4 + 9 + 6) \u2261 0 mod 10.",
-        "Category": "NumberSense",
+        "Category": "Number Sense",
         "Type": "Sprint"
     },
     {
@@ -318,7 +318,7 @@
         "Difficulty": "Hard",
         "Answer": "10",
         "Explanation": "A three-digit palindrome takes the form aba for digits 1 \u2264 a \u2264 9 and 0 \u2264 b \u2264 9. The remainder when this number is divided by 11 is (2a \u2212 b) mod 11. Observe that, for a fixed value of a, and cycling through all 10 possible values of b will yield all but one of the remainders from 0 to 10, inclusive, when divided by 11. Thus, for each value of a, the remainder when the product of the corresponding elements of S is divided by 10 is 10!/x for the missing remainder x when x is nonzero, and when x = 0, the remainder is \u22121. By Wilson\u2019s Theorem, we know that 10!/x \u2261 \u22121/x mod 11, so it suffices to find the missing remainder for each value of a. Because 10 \u2261 \u22121 mod 11, it follows that the missing remainders will be (a + a + 1) \u2261 (2a + 1) mod 11, so they are 2 + 1, 4 + 1, 6 + 1, 8 + 1, 10 + 1, 1 + 1, 3 + 1, 5 + 1, 7 + 1, which consist of every nonnegative integer from 0 to 10, inclusive, except for 1 and 10. Thus, the desired remainder is (\u22121)^9 / (10!/10\u00b71) \u2261 10 mod 11",
-        "Category": "NumberSense",
+        "Category": "Number Sense",
         "Type": "Sprint"
     },
     {
@@ -374,7 +374,7 @@
         "Difficulty": "Hard",
         "Answer": "10",
         "Explanation": "Note that 1234554321 = 11111\u00b7111111 and that 111111 = 1001\u00b7111 = 7\u00b711\u00b713\u00b73\u00b737. We are given that 123 | 1234554321, so 41 | 1234554321, and therefore, 41 | 11111. This yields 11111 = 41 \u00b7 271, and 271 is both prime and the desired largest prime factor, so our answer is 2 + 7 + 1 = 10.",
-        "Category": "NumberSense",
+        "Category": "Number Sense",
         "Type": "Sprint"
     },
     {
@@ -430,7 +430,7 @@
         "Difficulty": "Easy",
         "Answer": "784",
         "Explanation": "Note that gcd(28, 28) and lcm(28, 28) both equal 28. The product of 28 and 28 is 784.",
-        "Category": "NumberSense",
+        "Category": "Number Sense",
         "Type": "Sprint"
     },
     {
@@ -486,7 +486,7 @@
         "Difficulty": "Easy",
         "Answer": "12",
         "Explanation": "The sum of the day, month, and year is greater than 2024, so the smallest possible palindromic sum is 2112. The maximum sum from the day of the month and the month number is 12 + 31 = 43, so the year must be at least 2112 \u2212 43 = 2069. The first such palindromic date is December 31, 2069. The next time the sum 2112 is achieved is in the next year, 2070, for which the sum of the day of the month and the month number is 2112\u22122070 = 42. This requires the month to be at least 11. However, November only has 30 days, so this date occurs in December. The second such palindromic date is December 30, 2070. Since 2070 is not divisible by 4, the year 2070 is not a leap year. The number of days strictly between December 31, 2069 and December 30, 2070 is 365 \u2212 2 = 363, which has a digit sum of 12.",
-        "Category": "NumberSense",
+        "Category": "Number Sense",
         "Type": "Sprint"
     },
     {
@@ -570,7 +570,7 @@
         "Difficulty": "Medium",
         "Answer": "3",
         "Explanation": "Suppose a, b, and c are all positive. Since 60 has a prime factorization of 22\n\u00b7 3 \u00b7 5, there are 3 choices for which of a, b, or c is divisible by 3, 3 choices for which is divisible by 5, and 6 ways to distribute the factors of 2. There are 3\u00b73\u00b76 = 54 ways to distribute the prime factors such that a, b, and c are positive. Using complementary counting, assume c = 1, then compute the number of pairs of positive integers (a, b) with ab = 60. Since 60 has 12 divisors, there are 12 possible values of a and its corresponding value b = 60/a, so 12 of the 54 triples have c = 1. Thus, there are 54\u221212 = 42 such ordered triples such that a and b are positive and c > 1. For a given ordered triplet of positive integers, we may choose to negate exactly two of them or keep them all positive. Since c > 1, it must stay positive, so a and b are either both negative or both positive. Multiply by 2 to get a final count of 42 \u00b7 2 = 84, which when divided by 9 leaves a remainder of 3.",
-        "Category": "NumberSense",
+        "Category": "Number Sense",
         "Type": "Sprint"
     },
     {
@@ -598,7 +598,7 @@
         "Difficulty": "Medium",
         "Answer": "23",
         "Explanation": "We want \u221a(k + 1/25) = \u221a((25k+1)/25) = \u221a(25k+1)/5 to be rational, so 25k + 1 must be a perfect square. A perfect square congruent to 1 mod 25 is the square of an integer congruent to 1 or 24 modulo 25. We cannot have 25k + 1 = 1^2 because k = 0 is not allowed. So 25k + 1 \u2265 242 = 576, and thus k \u2265 23.",
-        "Category": "NumberSense",
+        "Category": "Number Sense",
         "Type": "Sprint"
     },
     {
@@ -640,7 +640,7 @@
         "Difficulty": "Medium",
         "Answer": "1",
         "Explanation": "We consider each statement independently.\n\u2022 Every dog has blue eyes.\nSuppose we have at least one dog with white fur. Dogs with white fur do not have brown eyes, but they do not necessarily have blue eyes. This statement might be false.\n\u2022 There is at least one dog with a collar.\nSuppose we have one dog with black fur and one dog with white fur. The dog with black fur cannot have a collar. The dog with white fur cannot have brown eyes, so we cannot conclude if it has a collar or not. This statement might be false.\n\u2022 Every dog with brown eyes has black fur.\nSuppose we have a dog with brown eyes. Dogs either have white fur or black fur. This dog cannot have white fur, or else it would not have brown eyes. Thus, this dog has black fur, so every dog with brown eyes has black fur. This statement must be true.\n\u2022 No dog with blue eyes has a collar.\nSuppose we have a dog with white fur and blue eyes. This satisfies neither of the conditions for or against having a collar, so we cannot conclude whether this dog has a collar. This statement might be false.\nTherefore, only 1 of the statements is guaranteed to be true.",
-        "Category": "NumberSense",
+        "Category": "Number Sense",
         "Type": "Sprint"
     },
     {
@@ -682,7 +682,7 @@
         "Difficulty": "Medium",
         "Answer": "1505",
         "Explanation": "Note that 16^3 = 2^12, so 2023^4 \u2261 (2^11 \u2212 25)^4 \u2261 (2^22 \u2212 2^12 \u00b7 25 + 25^2)^2 mod 16^3. Any term with a factor of 2^12 is congruent to 0, so this expression becomes (0+0+25^2)^2 \u2261 625^2 mod 16^3. To simplify further, observe that 625^2 \u2261 (2^7 \u00b7 5 \u2212 15)^2 mod 16^3 is also equivalent to 2^14 \u00b7 25 \u2212 2^8 \u00b7 5 \u00b7 15 + 225 \u2261 \u22122^8 \u00b7 16 \u00b7 5 + 2^8 \u00b7 5 + 225 mod 16^3, so the remainder when 2023^4 is divided by 16^3 is 1280+225 = 1505.",
-        "Category": "NumberSense",
+        "Category": "Number Sense",
         "Type": "Sprint"
     },
     {
@@ -752,7 +752,7 @@
         "Difficulty": "Hard",
         "Answer": "85",
         "Explanation": "Because lcm(a, b) gcd(a, b) = ab, the desired inequality is equivalent to (gcd(a, b))3 \u2264 ab. We will use complementary counting, so we find the number of ordered pairs where this inequality does not hold. If a = b, the inequality does not hold when a > 1, so there are 9 such pairs. Now suppose that a > b to take advantage of the symmetry of the problem. There are no solutions violating the inequality for b = 2 or for 6 \u2264 b \u2264 10. For b = 3, b = 4, and b = 5, the only corresponding values of a violating the inequality are 6, 8, and 10, respectively. In all, there are 9 + 2 \u00b7 3 = 15 cases in which the desired inequality does not hold, so the total number of satisfactory pairs (a, b) is 100 \u2212 15 = 85.",
-        "Category": "NumberSense",
+        "Category": "Number Sense",
         "Type": "Sprint"
     },
     {
@@ -822,7 +822,7 @@
         "Difficulty": "Hard",
         "Answer": "2025",
         "Explanation": "Among 9 \u00b7 1 + 5, 9 \u00b7 3 + 5, 9 \u00b7 5 + 5, \u00b7 \u00b7 \u00b7 , 9 \u00b7 2021 + 5, 9 \u00b7 2023 + 5, the even values of f(k) range from 14 to 18212, in increments of 18, which is a multiple of 2 but not of 4. Using the fact that 9 \u00b7 3+5 = 32, we have 1012 even values, 506 divisible by 4, 253 divisible by 8, 127 divisible by 16, and 64 divisible by 32. The smallest positive integer k for which f(k) is divisible by 64 is 35, so there are 32 multiples of 64, and likewise, 16 multiples of 128, 8 multiples of 256, 4 multiples of 512, 2 multiples of 1024, and 1 multiple of 2048. This gives a sum of 506\u00b71+253\u00b72+126\u00b73+63\u00b74+32\u00b75+16\u00b76+8\u00b77+4\u00b78+2\u00b79+1\u00b710+1\u00b711 = 2025.",
-        "Category": "NumberSense",
+        "Category": "Number Sense",
         "Type": "Sprint"
     },
     {
