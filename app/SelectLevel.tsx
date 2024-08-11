@@ -14,24 +14,22 @@ const SelectLevel: React.FC = () => {
   if (!area)
     area='Algebra'
 
- 
   const handlePress = (level: string) => {
-    
-    navigation.navigate('ProblemScreen',{level:level,area:area});
-   
+    navigation.navigate('ProblemScreen', { level: level, area: area });
   };
-const levels=['Easy','Medium','Hard'];
+
+  const levels = ['Easy', 'Medium', 'Hard'];
 
   return (
     <View style={styles.container}>
       <Text style={styles.text}>{area}</Text>
-      <View style={{flexDirection:'column', justifyContent:'space-evenly'}}>
-    {
-      levels.map((item, index) =>(
-      <View key={index}  style={{padding:10,  width:100}}><Button  title={item} onPress={() => handlePress(item)} /></View>))
-    }
-      
-       </View>
+      <View style={styles.buttonsContainer}>
+        {levels.map((item, index) => (
+          <View key={index} style={styles.buttonWrapper}>
+            <Button title={item} onPress={() => handlePress(item)} />
+          </View>
+        ))}
+      </View>
     </View>
   );
 };
@@ -43,8 +41,18 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   text: {
-    fontSize: 20,
-    marginBottom: 20,
+    fontSize: 40, // Increase text size
+    marginBottom: 30,
+  },
+  buttonsContainer: {
+    flexDirection: 'column',
+    justifyContent: 'space-evenly',
+    alignItems: 'center',
+  },
+  buttonWrapper: {
+    marginVertical: 10,
+    width: 150, // Increase button width
+    height: 60, // Increase button height
   },
 });
 

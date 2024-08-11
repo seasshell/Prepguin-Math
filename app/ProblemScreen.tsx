@@ -1,16 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, StyleSheet, Button, ScrollView, ToastAndroid } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, ScrollView, ToastAndroid } from 'react-native';
 import problemsData from './(tabs)/MathAppProbs.json';
 import { useRoute } from '@react-navigation/native';
 
-
 const ProblemScreen = () => {
-  const [hardGeometryProblems, setHardGeometryProblems] = useState([]);
+  const [Problems, setProblems] = useState([]);
   const [selectedProblemIndex, setSelectedProblemIndex] = useState(null); // State to track the selected problem
+  const [selectedChoice, setSelectedChoice] = useState(null); 
   const route = useRoute();
-  const { area,level } = route.params as { area: string, level:string }; // Extract the area parameter
- 
-
+  const { area, level } = route.params as { area: string, level: string }; // Extract the area parameter
 
   useEffect(() => {
     console.log(area, level);
@@ -19,27 +17,23 @@ const ProblemScreen = () => {
       problem.Category === area && problem.Difficulty === level
     );
 
-    // Update the state with the filtered problems
-    setHardGeometryProblems(filteredProblems);
-  }, [area,level]);
+    setProblems(filteredProblems);
+  }, [area, level]);
 
-  const ansCheck = (choice, answer) => {
-    if (choice === answer) {
-      ToastAndroid.show("Correct", ToastAndroid.SHORT);
-    } else {
-      ToastAndroid.show("Incorrect", ToastAndroid.SHORT);
-    }
+  const ansCheck = (choice, answer, index) => {
+    const isCorrect = choice === answer;
+    setSelectedChoice({ choice, isCorrect, problemIndex: index });
   };
 
   const handleShowExplanation = (index) => {
     setSelectedProblemIndex(index === selectedProblemIndex ? null : index);
   };
 
-  return ( 
-    <ScrollView> 
+  return (
+    <ScrollView>
       <View style={styles.container}>
         <Text style={styles.title}>{level} {area} Problems</Text>
-        {hardGeometryProblems.map((problem, index) => {
+        {Problems.map((problem, index) => {
           // Convert individual choice fields into an array
           const choices = [
             problem.ChoiceA,
@@ -48,19 +42,79 @@ const ProblemScreen = () => {
             problem.ChoiceD,
             problem.ChoiceE
           ];
- 
+
           return (
             <View key={index} style={styles.problemContainer}>
               <Text style={styles.question}>{problem.Question}</Text>
-              {choices.map((choice, idx) => (
-                <View key={idx} style={{ marginBottom: 10, width: 100 }}>
-                  <Button title={choice} onPress={() => ansCheck(choice, problem.Answer)} />
+              <View style={styles.choicesContainer}>
+                <View style={styles.row}>
+                  <TouchableOpacity
+                    style={[
+                      styles.choiceButton,
+                      selectedChoice && selectedChoice.problemIndex === index && selectedChoice.choice === problem.ChoiceA
+                        ? (selectedChoice.isCorrect ? styles.correctButton : styles.incorrectButton)
+                        : {}
+                    ]}
+                    onPress={() => ansCheck(problem.ChoiceA, problem.Answer, index)}
+                  >
+                    <Text style={styles.buttonText}>{`${problem.ChoiceA} ${selectedChoice && selectedChoice.problemIndex === index && selectedChoice.choice === problem.ChoiceA ? (selectedChoice.isCorrect ? "Correct!" : "Incorrect") : ""}`}</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={[
+                      styles.choiceButton,
+                      selectedChoice && selectedChoice.problemIndex === index && selectedChoice.choice === problem.ChoiceB
+                        ? (selectedChoice.isCorrect ? styles.correctButton : styles.incorrectButton)
+                        : {}
+                    ]}
+                    onPress={() => ansCheck(problem.ChoiceB, problem.Answer, index)}
+                  >
+                    <Text style={styles.buttonText}>{`${problem.ChoiceB} ${selectedChoice && selectedChoice.problemIndex === index && selectedChoice.choice === problem.ChoiceB ? (selectedChoice.isCorrect ? "Correct!" : "Incorrect") : ""}`}</Text>
+                  </TouchableOpacity>
                 </View>
-              ))}
-              <Button
-                title="Show Explanation"
+                <View style={styles.row}>
+                  <TouchableOpacity
+                    style={[
+                      styles.choiceButton,
+                      selectedChoice && selectedChoice.problemIndex === index && selectedChoice.choice === problem.ChoiceC
+                        ? (selectedChoice.isCorrect ? styles.correctButton : styles.incorrectButton)
+                        : {}
+                    ]}
+                    onPress={() => ansCheck(problem.ChoiceC, problem.Answer, index)}
+                  >
+                    <Text style={styles.buttonText}>{`${problem.ChoiceC} ${selectedChoice && selectedChoice.problemIndex === index && selectedChoice.choice === problem.ChoiceC ? (selectedChoice.isCorrect ? "Correct!" : "Incorrect") : ""}`}</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    style={[
+                      styles.choiceButton,
+                      selectedChoice && selectedChoice.problemIndex === index && selectedChoice.choice === problem.ChoiceD
+                        ? (selectedChoice.isCorrect ? styles.correctButton : styles.incorrectButton)
+                        : {}
+                    ]}
+                    onPress={() => ansCheck(problem.ChoiceD, problem.Answer, index)}
+                  >
+                    <Text style={styles.buttonText}>{`${problem.ChoiceD} ${selectedChoice && selectedChoice.problemIndex === index && selectedChoice.choice === problem.ChoiceD ? (selectedChoice.isCorrect ? "Correct!" : "Incorrect") : ""}`}</Text>
+                  </TouchableOpacity>
+                </View>
+                <View style={styles.row}>
+                  <TouchableOpacity
+                    style={[
+                      styles.choiceButton,
+                      selectedChoice && selectedChoice.problemIndex === index && selectedChoice.choice === problem.ChoiceE
+                        ? (selectedChoice.isCorrect ? styles.correctButton : styles.incorrectButton)
+                        : {}
+                    ]}
+                    onPress={() => ansCheck(problem.ChoiceE, problem.Answer, index)}
+                  >
+                    <Text style={styles.buttonText}>{`${problem.ChoiceE} ${selectedChoice && selectedChoice.problemIndex === index && selectedChoice.choice === problem.ChoiceE ? (selectedChoice.isCorrect ? "Correct!" : "Incorrect") : ""}`}</Text>
+                  </TouchableOpacity>
+                </View>
+              </View>
+              <TouchableOpacity
+                style={styles.explanationButton}
                 onPress={() => handleShowExplanation(index)}
-              />
+              >
+                <Text style={styles.buttonText}>Show Explanation</Text>
+              </TouchableOpacity>
               {selectedProblemIndex === index && (
                 <Text style={styles.explanation}>{problem.Explanation}</Text>
               )}
@@ -94,6 +148,39 @@ const styles = StyleSheet.create({
   question: {
     fontSize: 16,
     marginBottom: 10,
+  },
+  choicesContainer: {
+    marginBottom: 10,
+  },
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginBottom: 10,
+  },
+  choiceButton: {
+    flex: 1,
+    marginHorizontal: 5,
+    padding: 10,
+    borderRadius: 5,
+    alignItems: 'center',
+    backgroundColor: 'blue'
+  },
+  correctButton: {
+    backgroundColor: 'green',
+  },
+  incorrectButton: {
+    backgroundColor: 'red',
+  },
+  explanationButton: {
+    marginTop: 10,
+    padding: 10,
+    borderRadius: 5,
+    backgroundColor: '#007bff',
+    alignItems: 'center',
+  },
+  buttonText: {
+    color: '#fff',
+    fontSize: 16,
   },
   explanation: {
     marginTop: 10,

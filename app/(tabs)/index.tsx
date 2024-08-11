@@ -26,6 +26,7 @@ const HomeScreen: React.FC = () => {
 
   return (
     <ScrollView contentContainerStyle={styles.container}>
+      <View><Text style={{fontSize:50}}>Prepguin Math</Text></View>
       <View style={styles.buttonContainer}>
         <CustomButton
           title="Algebra"
@@ -44,6 +45,12 @@ const HomeScreen: React.FC = () => {
         <CustomButton
           title="Number Sense"
           onPress={() => navigation.navigate('SelectLevel',{area:"Number Sense"})}
+        />
+      </View>
+      <View style={styles.buttonContainer}>
+        <CustomButton
+          title="Timed Practice (Coming soon)"
+          onPress={() => console.log("Pressed")}
         />
       </View>
     </ScrollView>
