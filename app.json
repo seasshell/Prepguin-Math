@@ -29,7 +29,7 @@
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png",
-        "basePath": "/Prepguin-Math/"
+      "basePath": "/Prepguin-Math/"
 
     },
     "plugins": [

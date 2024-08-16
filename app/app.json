@@ -1,9 +1,0 @@
-{
-    "expo": {
-      "web": {
-        "output": "server",
-        "bundler": "metro"
-      }
-    }
-  }
-  
